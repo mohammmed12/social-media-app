@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const expressValidator = require("express-validator");
 
 const morgan = require("morgan");
 const dotenv = require("dotenv");
@@ -23,6 +24,7 @@ const postRoutes = require("./routes/posts");
 
 // middleware
 app.use(express.json());
+app.use(expressValidator());
 app.use(morgan("dev"));
 app.use("/", postRoutes);
 
