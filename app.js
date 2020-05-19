@@ -1,9 +1,12 @@
 const express = require("express");
 const app = express();
+const morgan = require("morgan");
 
-const { getPosts } = require("./routes/posts");
+app.use(morgan("dev"));
 
-app.get("/", getPosts);
+const postRoutes = require("./routes/posts");
+
+app.use("/", postRoutes);
 
 port = 8000;
 app.listen(port, () => console.log("server started"));
