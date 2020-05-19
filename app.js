@@ -18,9 +18,11 @@ mongoose.connection.on("error", (err) =>
   console.log(`db error ${err.message}`)
 );
 
+// getting routes
 const postRoutes = require("./routes/posts");
 
 // middleware
+app.use(express.json());
 app.use(morgan("dev"));
 app.use("/", postRoutes);
 
