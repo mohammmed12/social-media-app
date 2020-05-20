@@ -6,15 +6,15 @@ const {
   forgotPassword,
   resetPassword,
   socialLogin,
-} = require("../../Desktop/nodeapi-master/controllers/auth");
+} = require("../controllers/auth");
 
 // import password reset validator
 const {
   userSignupValidator,
   userSigninValidator,
   passwordResetValidator,
-} = require("../../Desktop/nodeapi-master/validator");
-const { userById } = require("../../Desktop/nodeapi-master/controllers/user");
+} = require("../validator/index");
+const { userById } = require("../controllers/user");
 
 const router = express.Router();
 
